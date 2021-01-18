@@ -77,6 +77,8 @@
           @yield('page-contacts')
           @yield('page-reviews')
           @yield('page-sales')
+          @yield('page-dogs')
+          @yield('page-cats')
       </div>
 
       <footer>Footer</footer>

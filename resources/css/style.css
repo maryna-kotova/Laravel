@@ -5,8 +5,14 @@ rgb(100 100 100) all text color
 rgba(255,92,1,.75) color orange
 #888 footer
 #aaa button up */
+.all{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
 .header-content{
-    background-color: rgba(0,0,0,0.4);
+    /* height: 20rem; */
+    background-color: rgba(0,0,0,0.4) !important;
     position: sticky;
     top: 0;
 }
@@ -14,7 +20,3 @@ rgba(255,92,1,.75) color orange
     /* color:white; */
     color: #b9b9b9;
 }
-/*
-footer{
-     сделать прилипание к нижнему краю страницы 
-}*/
