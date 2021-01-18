@@ -1,0 +1,20 @@
+/* rgb(64 64 64) header top 
+rgb(136 136 136) header top text
+rgba(0,0,0,.4) nav
+rgb(100 100 100) all text color
+rgba(255,92,1,.75) color orange
+#888 footer
+#aaa button up */
+.header-content{
+    background-color: rgba(0,0,0,0.4);
+    position: sticky;
+    top: 0;
+}
+.header-content *{
+    /* color:white; */
+    color: #b9b9b9;
+}
+/*
+footer{
+     сделать прилипание к нижнему краю страницы 
+}*/

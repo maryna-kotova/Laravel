@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MainController;
+use App\Http\Controllers\ReviewController;
+use App\Http\Controllers\StoreController;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,8 +20,11 @@ use App\Http\Controllers\MainController;
 //     return view('welcome');
 // });
 // Route::get('/', 'MainController@index'); - laravel before 8 version
-Route::get('/', [MainController::class, 'index']);
-Route::get('/contacts', [MainController::class, 'contacts']);
-Route::post('/contacts', [MainController::class, 'getContacts']);
+Route::get('/',          [MainController::class,   'index']);
+Route::get('/contacts',  [MainController::class,   'contacts']);
+Route::post('/contacts', [MainController::class,   'getContacts']);
+Route::get('/sale',      [StoreController::class,  'sale']);
+Route::get('/reviews',   [ReviewController::class, 'reviews']);
+
 
 

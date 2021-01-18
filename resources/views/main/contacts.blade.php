@@ -1,6 +1,7 @@
 @extends('layouts.main')
+@section('title', 'Contacts')
 
-@section('content')   
+@section('page-contacts')   
 
     <h1>Contacts</h1>   
     
@@ -38,4 +39,3 @@
 
 @endsection
 
-@section('title', 'Contacts')

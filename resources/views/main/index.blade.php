@@ -1,6 +1,6 @@
 @extends('layouts.main')
 
-@section('content')   
+@section('page-index')   
 
     <h1>{{ $title }} {!! $subTitle !!}</h1>
     @foreach ($categories as $category)
