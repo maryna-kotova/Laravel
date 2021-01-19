@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Category;
+use App\Models\Product;
 
 class MainController extends Controller
 {
@@ -17,6 +18,7 @@ class MainController extends Controller
         // dd($categories);
         return view('main.index', compact('title','products', 'subTitle', 'categories'));
     }
+    
     public function contacts()
     {
         return view('main.contacts');

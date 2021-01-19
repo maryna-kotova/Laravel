@@ -13,7 +13,7 @@
             <div class="card" style="width: 18rem;">
                 <img src="{{ $category->img }}" 
                      class="card-img-top" 
-                     alt="Товары для собак"
+                     alt="Товары для кошек и собак"
                      style="height:17rem">            
                 <div class="card-body">
                     <h5 class="card-title">{{ $category->name }}</h5>
