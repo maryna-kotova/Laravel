@@ -9,8 +9,8 @@ class MainController extends Controller
 {
     public function index()
     {
-        $title = 'Welcome';
-        $subTitle = '<em>to store</em>';
+        $title = 'Товары для домашних животных';
+        $subTitle = '<em>(кошек и собак)</em>';
         $products = ['Product1', 'Product2'];
         $categories = Category::all();
         // dump($products);

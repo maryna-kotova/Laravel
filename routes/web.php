@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MainController;
 use App\Http\Controllers\ReviewController;
 use App\Http\Controllers\StoreController;
+use App\Http\Controllers\ProductsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -24,7 +25,7 @@ Route::get( '/',         [MainController::class,     'index']);
 Route::get( '/contacts', [MainController::class,     'contacts']);
 Route::post('/contacts', [MainController::class,     'getContacts']);
 Route::get( '/sale',     [StoreController::class,    'sale']);
-Route::post('/reviews',  [ReviewController::class,   'reviews']);
+Route::get( '/reviews',  [ReviewController::class,   'reviews']);
 Route::get( '/dogs',     [ProductsController::class, 'dogs']);
 Route::get( '/cats',     [ProductsController::class, 'cats']);
 
