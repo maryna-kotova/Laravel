@@ -18,7 +18,7 @@
                 <div class="card-body">
                     <h5 class="card-title text-center">{{ $product->name }}</h5>
                     {{-- <p class="card-text">{{ $product->description}}</p> --}}
-                    <p>Категория: <span class="font-italic">{{ $nameCategory}}</span></p>
+                    <p>Категория: <span class="font-italic">{{ $product->category_id }}</span></p>
                     <p class="text-center text-warning">{{ $product->price }} грн.</p>
                     <a href="/{{ $product->slug }}" class="btn btn-warning" >Подробнее...</a>
                 </div>

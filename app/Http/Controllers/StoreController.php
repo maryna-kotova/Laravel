@@ -12,15 +12,14 @@ class StoreController extends Controller
     {
         $title = 'SALE';       
         $products   = Product::all();
-        $categories = Category::all();
-        $nameCategory = '';
+        $categories = Category::all();      
         foreach($categories as $category){
             foreach($products as $product){
                 if( $product->category_id == $category->id){
-                    $nameCategory = $category->name;
+                    $product->category_id = $category->name;
                 }
             }
         } 
-        return view('main.sale', compact('title','products', 'nameCategory'));
+        return view('main.sale', compact('title','products'));
     }
 }
