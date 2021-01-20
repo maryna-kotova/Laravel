@@ -26,6 +26,7 @@ Route::get( '/contacts', [MainController::class,     'contacts']);
 Route::post('/contacts', [MainController::class,     'getContacts']);
 Route::get( '/sale',     [StoreController::class,    'sale']);
 Route::get( '/reviews',  [ReviewController::class,   'reviews']);
+Route::post('/reviews',  [ReviewController::class,   'saveReview']);
 Route::get( '/dogs',     [ProductsController::class, 'dogs']);
 Route::get( '/cats',     [ProductsController::class, 'cats']);
 

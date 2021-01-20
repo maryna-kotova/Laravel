@@ -31,7 +31,6 @@ class MainController extends Controller
             'name'    => 'required|min:3|max:255',
             'email'   => 'required|email',
             'message' => 'required|min:3',
-
         ]);
         // dd( $requesr->all() );
         //Отправляем письмо
