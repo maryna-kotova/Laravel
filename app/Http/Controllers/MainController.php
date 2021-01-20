@@ -12,7 +12,7 @@ class MainController extends Controller
     {
         $title = 'Товары для домашних животных';
         $subTitle = '<em>(кошек и собак)</em>';
-        $products = ['Product1', 'Product2'];
+        $products = Product::all();  
         $categories = Category::all();
         // dump($products);
         // dd($categories);
@@ -21,7 +21,8 @@ class MainController extends Controller
     
     public function contacts()
     {
-        return view('main.contacts');
+        $title = 'Контакты';
+        return view('main.contacts', compact('title'));
     }
 
     public function getContacts(Request $requesr)

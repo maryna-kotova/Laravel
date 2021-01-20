@@ -25,20 +25,27 @@
         @endforeach
     </section>
 
-    {{-- <section class="allProducts">
-        <div class="card" style="width: 18rem;">
-            <img src="https://s1.1zoom.ru/big0/81/Dogs_White_background_Spitz_Tongue_546493_1365x1024.jpg" class="card-img-top" alt="Товары для собак">
-            <div class="card-body">
-                <h5 class="card-title">Товары для собак</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                <a href="/dogs" class="btn btn-outline-warning" >Подробнее...</a>
-            </div>
-        </div>
-    </section> --}}
+    <div class="page-header">
+        <p class="title" style="text-align: center">Все товары</p>
+    </div>
 
-    @foreach ($products as $product)
-        <p>{{ $loop->iteration}} {{$product}}</p>
-    @endforeach
+    <section class="mainPageCategory" style="display: flex; flex-flow: row wrap; justify-content:space-around;">
+        @foreach ($products as $product)
+
+            <div class="card" style="width: 18rem; margin:1rem;">
+                <img src="{{ $product->img }}" 
+                     class="card-img-top" 
+                     alt="Товары для животных"
+                     style="height:15rem">            
+                <div class="card-body">
+                    <h5 class="card-title text-center">{{ $product->name }}</h5>
+                    <p class="text-center text-warning">{{ $product->price }} грн.</p>
+                    <a href="/{{ $product->slug }}" class="btn btn-warning" >Подробнее...</a>
+                </div>
+            </div>
+
+        @endforeach
+    </section>
 
 @endsection
 

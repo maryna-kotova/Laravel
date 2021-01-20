@@ -2,10 +2,12 @@
 @section('title', 'Cats')
 
 @section('page-cats')
-    <h1 class="text-center">Cats</h1>
-    <div class="page-header">
-        <p class="title" style="text-align: center">Категории товаров</p>
-    </div>
+
+    <h2 class="text-center">{{ $title }}</h2>   
+
+    {{-- <div class="page-header">
+        <p class="title" style="text-align: center">{{ $title }}</p>
+    </div> --}}
 
 
 
