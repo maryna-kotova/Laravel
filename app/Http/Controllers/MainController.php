@@ -10,13 +10,24 @@ class MainController extends Controller
 {
     public function index()
     {
-        $title = 'Товары для домашних животных';
-        $subTitle = '<em>(кошек и собак)</em>';
+        $title = 'Всё для домашних животных';
+        // $subTitle = '<em>(кошек и собак)</em>';
         $products = Product::all();  
         $categories = Category::all();
+        $dateNow = date('Y-m-d');
+        $dateForLatestUpdates = date('Y-m-d', strtotime('-2 day'));
+        $newItems = [];
+        foreach( $products as $product ){
+            $update = $product->updated_at;
+            if( $update >= $dateForLatestUpdates ){
+                array_push( $newItems, $product );
+            }
+        }
         // dump($products);
-        // dd($categories);
-        return view('main.index', compact('title','products', 'subTitle', 'categories'));
+        // dd($newItems);
+        // return view('main.index', compact('title','products', 'subTitle', 'categories', 'newItems'));
+        return view('main.index', compact('title','products', 'categories', 'newItems'));
+
     }
     
     public function contacts()

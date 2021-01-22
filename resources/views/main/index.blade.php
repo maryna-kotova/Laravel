@@ -2,23 +2,26 @@
 
 @section('page-index')   
 
-    <h1 style="margin: 4rem">{{ $title }} {!! $subTitle !!}</h1>
+    {{-- <h1>{{ $title }} {!! $subTitle !!}</h1> --}}
+    <h1 class="text-center">{{ $title }}</h1>
+
     <div class="page-header">
-        <p class="title" style="text-align: center">Категории товаров</p>
+        <p class="title">Категории</p>
     </div>
  
-    <section class="mainPageCategory" style="display: flex; justify-content:space-around;">
+    <section class="mainPageCategory">
         @foreach ($categories as $category)
 
-            <div class="card" style="width: 18rem;">
+            <div class="cards">
                 <img src="{{ $category->img }}" 
-                     class="card-img-top" 
-                     alt="Товары для кошек и собак"
-                     style="height:17rem">            
+                     class="card-Img" 
+                     alt="Товары для кошек и собак">            
                 <div class="card-body">
-                    <h5 class="card-title">{{ $category->name }}</h5>
-                    <p class="card-text">{{ $category->description}}</p>
-                    <a href="/{{ $category->slug }}" class="btn btn-outline-warning" >Подробнее...</a>
+                    <h6 class="card-title text-center">{{ $category->name }}</h6>
+                    {{-- <p class="card-text">{{ $category->description}}</p> --}}
+                    {{-- <a href="/{{ $category->slug }}" class="btn btn-outline-warning" >Подробнее...</a> --}}
+                    <a href="/{{ $category->slug }}" class="card-btn-empty" >Подробнее...</a>
+
                 </div>
             </div>
 
@@ -26,21 +29,20 @@
     </section>
 
     <div class="page-header">
-        <p class="title" style="text-align: center">Все товары</p>
+        <p class="title">Новинки</p>
     </div>
 
-    <section class="mainPageCategory" style="display: flex; flex-flow: row wrap; justify-content:space-around;">
-        @foreach ($products as $product)
+    <section class="mainPageCategory">
+        @foreach ($newItems as $product)
 
-            <div class="card" style="width: 18rem; margin:1rem;">
+            <div class="cards">
                 <img src="{{ $product->img }}" 
-                     class="card-img-top" 
-                     alt="Товары для животных"
-                     style="height:15rem">            
+                     class="card-Img" 
+                     alt="Товары для животных">            
                 <div class="card-body">
-                    <h5 class="card-title text-center">{{ $product->name }}</h5>
-                    <p class="text-center text-warning">{{ $product->price }} грн.</p>
-                    <a href="/{{ $product->slug }}" class="btn btn-warning" >Подробнее...</a>
+                    <h6 class="card-title text-center">{{ $product->name }}</h6>
+                    <p class="card-price">{{ $product->price }} грн.</p>
+                    <a href="/{{ $product->slug }}" class="card-btn-full" >Купить</a>
                 </div>
             </div>
 
@@ -52,6 +54,6 @@
 {{-- @section('title')
     {{ $title }} 
 @endsection --}} 
-@section('title', $title)
+@section('title', 'Cat&Dog')
 
 

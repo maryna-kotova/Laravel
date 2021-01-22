@@ -3,10 +3,9 @@
 
 @section('page-contacts')   
 
-    <h2 class="text-center">{{ $title }}</h2>   
-    {{-- <div class="page-header">
-        <p class="title" style="text-align: center">{{ $title }}</p>
-    </div> --}}
+    <div class="page-header">
+        <p class="title">{{ $title }}</p>
+    </div>
     
     @include('messages.errors')
 
@@ -16,28 +15,42 @@
         </div>        
     @endif
 
-    <form action="/contacts" method="POST">
+    <form action="/contacts" method="POST" class="formaContacts">
         @csrf  
         {{--  @csrf   обязательная защита данных и убирает 419 ошибку --}}
         <div class="form-group">
-            <label for="name">Name</label>
-            <input type="text" class="form-control @error('name') is-invalid @enderror" name='name' id="name" value="{{old('name')}}">
+            {{-- <label for="name">Name</label> --}}
+            <input type="text"
+                   name='name'                  
+                   id="name" 
+                   value="{{old('name')}}"
+                   class="form-control border-secondary @error('name') is-invalid @enderror"
+                   placeholder="*Имя">
             {{-- поле ошибок вокруг инпута --}}
             @error('name') 
             <div class="invalid-feedback">{{$message}}</div>
-            @enderror
-            {{--  --}}
+            @enderror            
         </div>
         <div class="form-group">
-            <label for="name">Email</label>
-            <input type="text" class="form-control" name='email' id="email" value="{{old('email')}}">
+            {{-- <label for="name">Email</label> --}}
+            <input type="text"                    
+                   name='email' 
+                   id="email" 
+                   value="{{old('email')}}"
+                   class="form-control border-secondary" 
+                   placeholder="*E-mail">
         </div>
         <div class="form-group">
-            <label for="message">Message</label>
-            <textarea name="message" id="message" class="form-control">{{old('message')}}</textarea>
+            {{-- <label for="message">Message</label> --}}
+            <textarea name="message" 
+                      id="message" 
+                      rows="7"
+                      class="form-control border-secondary"
+                      placeholder="Ваше сообщение">{{old('message')}}</textarea>
+            {{-- <textarea name="" id="" cols="30" rows="10"></textarea> --}}
         </div>
     
-        <button class="btn btn-primary">Send</button>
+        <button class="btn btn-full">Отправить</button>
     </form>
 
 @endsection

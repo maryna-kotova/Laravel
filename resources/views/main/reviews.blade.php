@@ -1,10 +1,11 @@
 @extends('layouts.main')
 @section('title', 'Reviews')
 
-
-
 @section('page-reviews')
-    <h1 class="text-center">Отзывы</h1>
+
+    <div class="page-header">
+        <p class="title">Отзывы</p>
+    </div>
 
     @include('messages.errors')
 
@@ -14,15 +15,14 @@
     </div>        
     @endif
 
-    <form action="/reviews" method="POST" style="width: 50%; margin: 2rem auto;">
+    <form action="/reviews" method="POST" class="formaReviews">
         @csrf 
         <div class="form-group">
             {{-- <label for="name">Имя</label> --}}
             <input type="text" 
                    name="nameReviews" 
                    id="nameReviews" 
-                   class="form-control border-secondary" 
-                   style="box-shadow:none"
+                   class="form-control border-secondary inputReviewsName"                    
                    placeholder="Ваше имя"
                    value="{{old('nameReviews')}}">
         </div>
@@ -30,11 +30,10 @@
             {{-- <label for="review">Review</label> --}}
             <textarea name="review" 
                       id="review" 
-                      class="form-control border-secondary"
-                      style="min-height:7rem; box-shadow:none" 
+                      class="form-control border-secondary textareaReviews"                      
                       placeholder="*Напишите свой отзыв">{{old('review')}}</textarea>
         </div>  
-        <button class="btn btn-warning">Отправить</button>    
+        <button class="btn-empty">Отправить</button>    
     </form>
     
 @endsection
