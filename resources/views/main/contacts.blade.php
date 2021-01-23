@@ -6,14 +6,16 @@
     <div class="page-header">
         <p class="title">{{ $title }}</p>
     </div>
-    
-    @include('messages.errors')
+    <div class="windowMessage">
+        @include('messages.errors')
 
-    @if(session('success'))
-        <div class="alert alert-success">
-            {{session('success')}}
-        </div>        
-    @endif
+        @if(session('success'))
+            <div class="alert alert-success">
+                {{session('success')}}
+            </div>        
+        @endif
+    </div>
+
 
     <form action="/contacts" method="POST" class="formaContacts">
         @csrf  
@@ -50,7 +52,7 @@
             {{-- <textarea name="" id="" cols="30" rows="10"></textarea> --}}
         </div>
     
-        <button class="btn btn-full">Отправить</button>
+        <button class="btn btn-empty">Отправить</button>
     </form>
 
 @endsection

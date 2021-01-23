@@ -2,13 +2,15 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Review;
 use Illuminate\Http\Request;
 
 class ReviewController extends Controller
 {
     public function reviews()
     {
-        return view('main.reviews');
+        $reviews = Review::all();
+        return view('main.reviews', compact('reviews'));
     }
     public function saveReview(Request $request)
     {
@@ -17,6 +19,6 @@ class ReviewController extends Controller
             'review'      => 'required|min:3|max:1000',
         ]);
         //  dd( $request->all() );
-        return back()->with('success', 'Спасибо отзыв!');
+        return back()->with('success', 'Спасибо за отзыв!');
     }
 }

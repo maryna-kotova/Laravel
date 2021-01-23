@@ -124,8 +124,13 @@ body{
     background-color: transparent;
     color: rgba(255,92,1,.75);
 }
+.paginations{
+    width: 50%;
+    height: 10rem;
+}
 .formaReviews, 
-.formaContacts{
+.formaContacts,
+.windowMessage{
     width: 50%; 
     margin: 2rem auto;
 }

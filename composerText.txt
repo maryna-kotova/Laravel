@@ -6,3 +6,7 @@ php artisan migrate
 
 # php artisan migrate:rollback - откат назад
 # php artisan migrate:refresh - перезагрузка
+
+ composer require laravel/ui //устанавливаем пакеты
+
+  php artisan ui bootstrap //подключаем бутстрап

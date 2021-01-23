@@ -11,9 +11,13 @@ class StoreController extends Controller
     public function sale()
     {
         $title = 'Акции';       
-        $products   = Product::all();
+        //$products   = Product::where('recommended', '=', 1)->where('price', '<', 500)->orWhere('category_id','=', 2)->orderBy('name')->limit(5)->get();
+        // $products   = Product::where('recommended', '=', 1)->first(); //когда выбираем один товар
+        $products   = Product::where('recommended', '=', 1)->paginate(2);// выводит ограниченное кол-во товаров на странице с пагинацией
+        // $products   = Product::where('recommended', '=', 1)->simplePaginate(2);
         $categories = Category::all();      
 
-        return view('main.sale', compact('title','products'));
+        // dd($products);
+        return view('store.sale', compact('title','products'));
     }
 }

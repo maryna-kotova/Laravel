@@ -12,7 +12,7 @@
             <div class="cards">
                 <img src="{{ $product->img }}" 
                      class="card-Img" 
-                     alt="Товары для животных">            
+                     alt="{{$product->name}}">            
                 <div class="card-body">
                     <h5 class="card-title text-center">{{ $product->name }}</h5>
                     {{-- <p class="card-text">{{ $product->description}}</p> --}}
@@ -25,5 +25,9 @@
 
         @endforeach
     </section>
+    {{-- <div class="paginations"> --}}
+        {{$products->links()}}
+    {{-- </div> --}}
+    
 @endsection
 

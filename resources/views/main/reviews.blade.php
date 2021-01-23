@@ -6,14 +6,16 @@
     <div class="page-header">
         <p class="title">Отзывы</p>
     </div>
+    <div class="windowMessage">
+        @include('messages.errors')
 
-    @include('messages.errors')
+        @if(session('success'))
+        <div class="alert alert-success">
+            {{session('success')}}
+        </div>        
+        @endif
+    </div>
 
-    @if(session('success'))
-    <div class="alert alert-success">
-        {{session('success')}}
-    </div>        
-    @endif
 
     <form action="/reviews" method="POST" class="formaReviews">
         @csrf 
@@ -35,5 +37,14 @@
         </div>  
         <button class="btn-empty">Отправить</button>    
     </form>
+
+    <section class="showReviews">
+        @foreach ($reviews as $review)
+            <div class="border p-3 m-3">
+            {{$review->name}} | {{$review->created_at}} <hr><bloquote>{{$review->review}}</bloquote>
+            </div>
+        @endforeach
+
+    </section>
     
 @endsection
