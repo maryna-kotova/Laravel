@@ -13,10 +13,10 @@ rgba(255,92,1,.75) color orange
 html, body{
     scroll-behavior: smooth;
 }
-body{
+/* body{
     font: 400 13px/21px 'Open Sans',sans-serif;
     color: #666;
-}
+} */
 .all{
     min-height: 100vh;
     height: auto;
@@ -182,16 +182,16 @@ input, textarea{
 .fa-arrow-alt-circle-up:hover{
     color: rgba(255,92,1,0.65);
 }
-.footer {
+/* .footer {
     padding: 0.5rem;
     clear: both;
     background: #888;
     color: #fff;
-    /* line-height: 0; */
-    /* font-size: 0; */
-}
-.footer-bottom{
+    line-height: 0; */
+    /* font-size: 0;
+} */
+/* .footer-bottom{
     margin: 0;
     text-align: center;
     color:#fff;
-}
+} */

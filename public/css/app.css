@@ -10004,3 +10004,14 @@ h3 {
     border-color: #dee2e6;
   }
 }
+.footer {
+  padding: 0.5rem;
+  clear: both;
+  background: #888;
+  color: #fff;
+}
+.footer .footer-bottom {
+  margin: 0;
+  text-align: center;
+  color: #fff;
+}
