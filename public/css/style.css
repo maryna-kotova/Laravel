@@ -13,10 +13,6 @@ rgba(255,92,1,.75) color orange
 html, body{
     scroll-behavior: smooth;
 }
-/* body{
-    font: 400 13px/21px 'Open Sans',sans-serif;
-    color: #666;
-} */
 .all{
     min-height: 100vh;
     height: auto;
@@ -55,7 +51,7 @@ html, body{
     display: inline-block;
     background: #fff;
     color: #666;
-    font: 300 24px/24px 'Open Sans',sans-serif;
+    font: 300 25px/25px 'Open Sans',sans-serif;
     padding: 0 15px;
     margin: 0;
     z-index: 2;
@@ -129,16 +125,15 @@ html, body{
     height: 10rem;
 }
 .news{
-    margin: 0.5rem;
+    display: flex;
+    margin: 1rem;
     padding: 1rem;
     border: 1px solid lightgray;
 }
 .news img{
-    width:  6rem;
-    height: 6rem;
+    width: 10rem;
+    margin-right: 1rem;
     border: 1px solid lightgray;
-    margin: 0.5rem;
-    float: left;
 }
 .formaReviews, 
 .formaContacts,
