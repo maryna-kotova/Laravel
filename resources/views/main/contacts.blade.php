@@ -1,7 +1,7 @@
 @extends('layouts.main')
 @section('title', 'Contacts')
 
-@section('page-contacts')   
+@section('content')   
 
     <div class="page-header">
         <p class="title">{{ $title }}</p>
@@ -52,7 +52,7 @@
             {{-- <textarea name="" id="" cols="30" rows="10"></textarea> --}}
         </div>
     
-        <button class="btn btn-empty">Отправить</button>
+        <button class="btn-empty">Отправить</button>
     </form>
 
 @endsection

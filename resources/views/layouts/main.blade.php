@@ -17,12 +17,8 @@
     @include('layouts.navbar')
 
     <div class="container">
-        @yield('page-index')
-        @yield('page-contacts')
-        @yield('page-reviews')
-        @yield('page-sales')
-        @yield('page-dogs')
-        @yield('page-cats')         
+        @yield('content')
+        
     </div>
 
     <footer class="footer">

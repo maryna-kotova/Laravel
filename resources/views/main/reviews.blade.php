@@ -1,7 +1,7 @@
 @extends('layouts.main')
 @section('title', 'Reviews')
 
-@section('page-reviews')
+@section('content')
 
     <div class="page-header">
         <p class="title">Отзывы</p>

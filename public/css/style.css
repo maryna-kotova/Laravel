@@ -128,6 +128,18 @@ html, body{
     width: 50%;
     height: 10rem;
 }
+.news{
+    margin: 0.5rem;
+    padding: 1rem;
+    border: 1px solid lightgray;
+}
+.news img{
+    width:  6rem;
+    height: 6rem;
+    border: 1px solid lightgray;
+    margin: 0.5rem;
+    float: left;
+}
 .formaReviews, 
 .formaContacts,
 .windowMessage{
@@ -140,9 +152,7 @@ input, textarea{
 .border-secondary{
     border: 1px solid lightgray !important;
 }
-.inputReviewsName{
-    
-}
+
 .textareaReviews{
     min-height:7rem; 
 }

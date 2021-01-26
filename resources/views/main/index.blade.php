@@ -3,7 +3,7 @@
     <link rel="stylesheet" href="css/style.css">    
 @endsection --}}
 
-@section('page-index')   
+@section('content')   
 
     {{-- <h1>{{ $title }} {!! $subTitle !!}</h1> --}}
     <h1 class="text-center">{{ $title }}</h1>

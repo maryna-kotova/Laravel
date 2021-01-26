@@ -1,7 +1,7 @@
 @extends('layouts.main')
 @section('title', 'Sales')
 
-@section('page-sales')
+@section('content')
     <div class="page-header">
         <p class="title">{{ $title }}</p>
     </div>

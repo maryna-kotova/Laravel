@@ -5,6 +5,7 @@ use App\Http\Controllers\MainController;
 use App\Http\Controllers\ReviewController;
 use App\Http\Controllers\StoreController;
 use App\Http\Controllers\ProductsController;
+use App\Http\Controllers\NewsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -29,6 +30,8 @@ Route::get( '/reviews',  [ReviewController::class,   'reviews']);
 Route::post('/reviews',  [ReviewController::class,   'saveReview']);
 Route::get( '/dogs',     [ProductsController::class, 'dogs']);
 Route::get( '/cats',     [ProductsController::class, 'cats']);
+Route::get( '/news',     [NewsController::class,     'news']);
+
 
 
 

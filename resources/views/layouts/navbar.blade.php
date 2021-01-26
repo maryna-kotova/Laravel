@@ -21,6 +21,10 @@
         </li>
 
         <li class="nav-item">
+          <a class="nav-link text-white text-uppercase" href="/news">Новости</a>
+        </li>
+
+        <li class="nav-item">
           <a class="nav-link text-white text-uppercase" href="/dogs">Собаки</a>
         </li>
 
