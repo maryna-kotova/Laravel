@@ -10,6 +10,8 @@
     @foreach ($news as $new)
         <div class="news">           
             <img src="/images/news/{{$new->img}}" alt="{{ $title }}">   
+            {{-- <img src="https://picsum.photos/300/200" alt="{{ $title }}">   --}}
+
             <article>
                 <h3>{{ $new->title }}</h3>    
                 <p>{{ $new->created_at}}</p>    

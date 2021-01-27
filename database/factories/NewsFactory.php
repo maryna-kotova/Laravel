@@ -26,7 +26,7 @@ class NewsFactory extends Factory
             'title'         => $this->faker->words(2, true),            
             'short_content' => $this->faker->words(10, true),
             'content'       => $this->faker->paragraphs(2, true),
-            'img'           => $this->faker->image('public/images', 200,180, 'news', false),
+            'img'           => $this->faker->image('public/images/news', 200,180, 'news', false),
             'slug'          => $this->faker->slug,          
             'user_id'       => User::factory(),
         ];
