@@ -9,7 +9,7 @@ class ReviewController extends Controller
 {
     public function reviews()
     {
-        $reviews = Review::all();
+        $reviews = Review::orderByDesc('created_at')->paginate(5);    
         return view('main.reviews', compact('reviews'));
     }
     public function saveReview(Request $request)
@@ -18,6 +18,11 @@ class ReviewController extends Controller
             'nameReviews' => 'required|min:3|max:55',            
             'review'      => 'required|min:3|max:1000',
         ]);
+        $review = new Review();
+        $review->name = $request->nameReviews;
+        $review->review = $request->review;
+        $review->save();
+
         //  dd( $request->all() );
         return back()->with('success', 'Спасибо за отзыв!');
     }

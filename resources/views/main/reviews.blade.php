@@ -20,7 +20,7 @@
     <form action="/reviews" method="POST" class="formaReviews">
         @csrf 
         <div class="form-group">
-            {{-- <label for="name">Имя</label> --}}
+            {{-- <label for="nameReviews">Имя</label> --}}
             <input type="text" 
                    name="nameReviews" 
                    id="nameReviews" 
@@ -39,11 +39,15 @@
     </form>
 
     <section class="showReviews">
-        @foreach ($reviews as $review)
+        @forelse ($reviews as $review)
             <div class="border p-3 m-3">
-            {{$review->name}} | {{$review->created_at}} <hr><bloquote>{{$review->review}}</bloquote>
+            {{$review->name}} | {{ $review->created_at->format('d.m.Y') }} <hr><bloquote>{{$review->review}}</bloquote>
             </div>
-        @endforeach
+            @empty
+            <p>Добавьте отзыв к товару</p>
+        @endforelse
+
+            {{ $reviews->links() }}
 
     </section>
     
