@@ -1,6 +1,8 @@
 ---Создание контроллера---
 php artisan make:controller MainController  
 
+php artisan db:seed
+
 ---------Миграция---------
 php artisan migrate
 

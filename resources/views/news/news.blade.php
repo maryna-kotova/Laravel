@@ -9,7 +9,7 @@
 
     @foreach ($news as $new)
         <div class="news">           
-            <img src="{{ $new->img }}" alt="{{ $title }}">   
+            <img src="/images/news/{{$new->img}}" alt="{{ $title }}">   
             <article>
                 <h3>{{ $new->title }}</h3>    
                 <p>{{ $new->created_at}}</p>    
