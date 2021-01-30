@@ -25,11 +25,11 @@
         </li>
 
         <li class="nav-item">
-          <a class="nav-link text-white text-uppercase" href="/dogs">Собаки</a>
+          <a class="nav-link text-white text-uppercase" href="/category/dogs">Собаки</a>
         </li>
 
         <li class="nav-item">
-          <a class="nav-link text-white text-uppercase" href="/cats">Кошки</a>
+          <a class="nav-link text-white text-uppercase" href="/category/cats">Кошки</a>
         </li>
         
         <li class="nav-item">

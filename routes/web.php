@@ -22,15 +22,18 @@ use App\Http\Controllers\NewsController;
 //     return view('welcome');
 // });
 // Route::get('/', 'MainController@index'); - laravel before 8 version
-Route::get( '/',         [MainController::class,     'index']);
-Route::get( '/contacts', [MainController::class,     'contacts']);
-Route::post('/contacts', [MainController::class,     'getContacts']);
-Route::get( '/sale',     [StoreController::class,    'sale']);
-Route::get( '/reviews',  [ReviewController::class,   'reviews']);
-Route::post('/reviews',  [ReviewController::class,   'saveReview']);
-Route::get( '/dogs',     [ProductsController::class, 'dogs']);
-Route::get( '/cats',     [ProductsController::class, 'cats']);
-Route::get( '/news',     [NewsController::class,     'news']);
+Route::get( '/',                [MainController::class,     'index']);
+Route::get( '/contacts',        [MainController::class,     'contacts']);
+Route::post('/contacts',        [MainController::class,     'getContacts']);
+Route::get( '/sale',            [StoreController::class,    'sale']);
+Route::get( '/reviews',         [ReviewController::class,   'reviews']);
+Route::post('/reviews',         [ReviewController::class,   'saveReview']);
+Route::get( '/news',            [NewsController::class,     'news']);
+
+Route::get( '/category/{slug}', [StoreController::class, 'category']);
+
+
+
 
 
 

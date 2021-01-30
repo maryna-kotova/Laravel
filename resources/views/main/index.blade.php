@@ -12,22 +12,20 @@
         <p class="title">Категории</p>
     </div>
  
-    <section class="mainPageCategory">
-        @foreach ($categories as $category)
+    {{-- <section class="mainPageCategory">
 
+
+        @foreach ($products as $product)
             <div class="cards">
-                <img src="{{ $category->img }}" 
+                <img src="{{ $product->img }}" 
                      class="card-Img" 
-                     alt="Товары для кошек и собак">            
+                     alt="{{$product->name}}">            
                 <div class="card-body">
-                    <h6 class="card-title text-center">{{ $category->name }}</h6>
-                    {{-- <p class="card-text">{{ $category->description}}</p> --}}
-                    {{-- <a href="/{{ $category->slug }}" class="btn btn-outline-warning" >Подробнее...</a> --}}
-                    <a href="/{{ $category->slug }}" class="card-btn-empty" >Подробнее...</a>
-
+                    <h5 class="card-title text-center">{{ $product->name }}</h5>        
+                    <p class="card-price">{{ $product->price }} грн.</p>
+                    <a href="/{{ $product->slug }}" class="card-btn-full" >Купить</a>
                 </div>
             </div>
-
         @endforeach
     </section>
 
@@ -36,21 +34,32 @@
     </div>
 
     <section class="mainPageCategory">
-        @foreach ($newItems as $product)
-
+        @foreach ($products as $product)
             <div class="cards">
                 <img src="{{ $product->img }}" 
                      class="card-Img" 
                      alt="Товары для животных">            
                 <div class="card-body">
-                    <h6 class="card-title text-center">{{ $product->name }}</h6>
+                    <h5 class="card-title text-center">{{ $product->name }}</h5>
+                    <h6>Категория: <a href="/category/{{$product->category->slug}}">{{ $product->category->name }}</a></h6>
                     <p class="card-price">{{ $product->price }} грн.</p>
                     <a href="/{{ $product->slug }}" class="card-btn-full" >Купить</a>
                 </div>
+                
+                
             </div>
 
         @endforeach
+    </section> --}}
+    <section class="mainPageCategory">
+        @foreach ($products as $product)
+  
+            @include('store.parts._product')
+  
+        @endforeach
     </section>
+  
+    {{-- {{$products->links()}} --}}
 
 @endsection
 

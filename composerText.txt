@@ -20,3 +20,5 @@ php artisan make:factory ProductFactory --model=Product
 php artisan make:factory Product --m 
 
 php artisan vendor:publish --tag=laravel-pagination //копируем пагинацию себе в папку ресурсес для редактирования
+
+php artisan route:list

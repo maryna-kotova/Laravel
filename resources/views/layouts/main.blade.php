@@ -16,10 +16,19 @@
   <div class="all">
     @include('layouts.navbar')
 
-    <div class="container">
-        @yield('content')
+    <section class="container">
+
+      <div class="row">
+        <div class="col-md-3">
+          @section('sidebar')
+            @include('store.parts._list-categories')              
+          @show
+          
+        </div>
+        <div class="col-md-9">@yield('content')</div>
+      </div>        
         
-    </div>
+    </section>
 
     <footer class="footer">
       <p class="footer-bottom">&copy;Maryna Kotova 2020</p>

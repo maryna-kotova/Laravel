@@ -12,21 +12,24 @@ class MainController extends Controller
     {
         $title = 'Всё для домашних животных';
         // $subTitle = '<em>(кошек и собак)</em>';
-        $products = Product::all();  
-        $categories = Category::all();
-        $dateNow = date('Y-m-d');
-        $dateForLatestUpdates = date('Y-m-d', strtotime('-2 day'));
-        $newItems = [];
-        foreach( $products as $product ){
-            $update = $product->updated_at;
-            if( $update >= $dateForLatestUpdates ){
-                array_push( $newItems, $product );
-            }
-        }
+        // $products = Product::all();
+        $products = Product::with('category')->get();  
+
+        // $categories = Category::all();
+        
+        // $dateNow = date('Y-m-d');
+        // $dateForLatestUpdates = date('Y-m-d', strtotime('-2 day'));
+        // $newItems = [];
+        // foreach( $products as $product ){
+        //     $update = $product->updated_at;
+        //     if( $update >= $dateForLatestUpdates ){
+        //         array_push( $newItems, $product );
+        //     }
+        // }
         // dump($products);
-        // dd($newItems);
+        // dd($products[0]);
         // return view('main.index', compact('title','products', 'subTitle', 'categories', 'newItems'));
-        return view('main.index', compact('title','products', 'categories', 'newItems'));
+        return view('main.index', compact('title', 'products'));
 
     }
     
