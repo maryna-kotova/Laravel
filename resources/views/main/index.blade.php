@@ -1,7 +1,8 @@
 @extends('layouts.main')
+
 {{-- @section('css')
     <link rel="stylesheet" href="css/style.css">    
-@endsection --}}
+@endsection --}} 
 
 @section('content')   
 

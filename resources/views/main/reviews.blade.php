@@ -16,27 +16,33 @@
         @endif
     </div>
 
+    @auth        
+    
+        <form action="/reviews" method="POST" class="formaReviews">
+            @csrf 
+            <div class="form-group">
+                {{-- <label for="nameReviews">Имя</label> --}}
+                <input type="text" 
+                       name="nameReviews" 
+                       id="nameReviews" 
+                       class="form-control border-secondary inputReviewsName"                    
+                       placeholder="Ваше имя"
+                       value="{{old('nameReviews')}}">
+            </div>
+            <div class="form-group">
+                {{-- <label for="review">Review</label> --}}
+                <textarea name="review" 
+                          id="review" 
+                          class="form-control border-secondary textareaReviews"                      
+                          placeholder="*Напишите свой отзыв">{{old('review')}}</textarea>
+            </div>  
+            <button class="btn-empty">Отправить</button>    
+        </form>
 
-    <form action="/reviews" method="POST" class="formaReviews">
-        @csrf 
-        <div class="form-group">
-            {{-- <label for="nameReviews">Имя</label> --}}
-            <input type="text" 
-                   name="nameReviews" 
-                   id="nameReviews" 
-                   class="form-control border-secondary inputReviewsName"                    
-                   placeholder="Ваше имя"
-                   value="{{old('nameReviews')}}">
-        </div>
-        <div class="form-group">
-            {{-- <label for="review">Review</label> --}}
-            <textarea name="review" 
-                      id="review" 
-                      class="form-control border-secondary textareaReviews"                      
-                      placeholder="*Напишите свой отзыв">{{old('review')}}</textarea>
-        </div>  
-        <button class="btn-empty">Отправить</button>    
-    </form>
+    @else
+        <p>Оставить отзыв можно только зарегистрированным пользователям</p>
+        <a href="/login">Войти</a> / <a href="/register">Зарегистрироваться</a>
+    @endauth
 
     <section class="showReviews">
         @forelse ($reviews as $review)
@@ -50,5 +56,11 @@
             {{ $reviews->links() }}
 
     </section>
+    
+@endsection
+
+@section('sidebar')
+    {{-- @parent --}}
+    Adress
     
 @endsection
