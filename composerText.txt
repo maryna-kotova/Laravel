@@ -24,3 +24,5 @@ php artisan vendor:publish --tag=laravel-pagination //копируем паги�
 php artisan route:list
 ---------------------------------------ADMIN--------------------------------
 php artisan make:controller Admin\AdminController
+
+php artisan make:controller Admin\CategoryController --resource
