@@ -5,12 +5,10 @@
     <div class="page-header">
         <p class="title">{{ $title }}</p>
     </div>
-
+    
     <section class="mainPageCategory">
-        @foreach ($products as $product)
-
-            @include('store.parts._product')
-
+        @foreach ($products as $product)            
+            @include('store.parts._product')        
         @endforeach
     </section>
     {{-- <div class="paginations"> --}}

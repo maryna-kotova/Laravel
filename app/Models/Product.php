@@ -19,4 +19,9 @@ class Product extends Model
         return $this->belongsTo(Category::class, 'category_id', 'id', 'id');
         //модель, назв столб с внешним ключем, назв столбца с текущей модели, назв столбца связанной модели
     }
+    
+    public function reviews()
+    {
+        return  $this->hasMany(Review::class);
+    }
 }

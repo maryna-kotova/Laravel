@@ -22,7 +22,7 @@
             @csrf 
             <div class="form-group">
                 {{-- <label for="nameReviews">Имя</label> --}}
-                <input type="text" 
+                <input type="text"  
                        name="nameReviews" 
                        id="nameReviews" 
                        class="form-control border-secondary inputReviewsName"                    
