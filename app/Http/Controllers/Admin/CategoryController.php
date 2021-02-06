@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\Category;
 use Illuminate\Http\Request;
 
 class CategoryController extends Controller
@@ -14,7 +15,8 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        //
+        $categories = Category::orderByDesc('created_at')->get();
+        return view('admin.category.index', compact('categories'));
     }
 
     /**
@@ -24,7 +26,7 @@ class CategoryController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.category.create');
     }
 
     /**
@@ -35,7 +37,20 @@ class CategoryController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // $category = new Category();
+        // $category->name        = $request->name;
+        // $category->slug        = $request->slug;
+        // $category->description = $request->description;
+        // $category->img         = $request->img;
+        // $category->save();
+
+        // $fname = $request->file('imgUpload');
+        // if($fname != null){
+        //     //сохраняем путь картинки
+        //     $category->img = $fname->store('uploads');            
+        // }
+        Category::create( $request->all() );
+        return redirect('/admin/category');
     }
 
     /**

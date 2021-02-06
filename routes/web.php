@@ -29,7 +29,7 @@ Route::get( '/',                [MainController::class,   'index']);
 Route::get( '/contacts',        [MainController::class,   'contacts'])->middleware('auth');
 Route::post('/contacts',        [MainController::class,   'getContacts']);
 Route::get( '/sale',            [StoreController::class,  'sale']);
-Route::get( '/reviews',         [ReviewController::class, 'reviews']);
+Route::get( '/reviews',         [ReviewController::class, 'reviews'])->name('review');
 Route::post('/reviews',         [ReviewController::class, 'saveReview']);
 Route::get( '/news',            [NewsController::class,   'news']);
 Route::get( '/category/{slug}', [StoreController::class,  'category']);
@@ -38,7 +38,11 @@ Route::get( '/product/{slug}',  [StoreController::class,  'product']);
 
 Route::middleware(['auth'])->prefix('admin')->group(function(){
    Route::get('/',  [AdminController::class,  'index']);
-   Route::resource('/category', CategoryController::class);
+   Route::resource('/category', CategoryController::class); 
+});
+
+Route::group(['prefix' => 'laravel-filemanager', 'middleware' => ['web', 'auth']], function () {
+   \UniSharp\LaravelFilemanager\Lfm::routes();
 });
 
 Auth::routes();

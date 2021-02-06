@@ -1,6 +1,7 @@
 <div class="cards">          
     <a href="/product/{{$product->slug}}" class="image">
-        <div><i class="far fa-comment"></i> {{ count($product->reviews) }}</div>
+        {{-- <div><i class="far fa-comment"></i> {{ count($product->reviews) }}</div> --}}
+        <div><i class="far fa-comment"></i> {{ $product->reviews_count }}</div>
         <img src="{{ $product->img }}" 
             class="card-Img" 
             alt="{{$product->name}}">   

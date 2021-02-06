@@ -33,7 +33,7 @@ class StoreController extends Controller
     public function product($slug)
     {
         $product = Product::where('slug', $slug)->firstOrFail();
-        $reviews= Review::where('product_id', $product->id)->get();      
+        $reviews= Review::where('product_id', $product->id)->get();  
        
         return view('store.product', compact('product', 'reviews'));
     }
