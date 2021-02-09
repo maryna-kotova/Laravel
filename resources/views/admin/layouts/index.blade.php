@@ -186,7 +186,10 @@
       <nav class="mt-2">
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
             <li class="list-item">
-              <a href="/admin/category"><i class="fas fa-list-alt"></i> Категории</a>
+              <a href="/admin/category"><i class="fas fa-folder"></i> Категории</a>
+            </li>
+            <li class="list-item">
+              <a href="/admin/product"><i class="fas fa-folder"></i> Товары</a>
             </li>
         </ul>
       </nav>

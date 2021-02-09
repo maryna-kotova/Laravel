@@ -2,11 +2,11 @@
 
 use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Admin\CategoryController;
+use App\Http\Controllers\Admin\ProductController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MainController;
 use App\Http\Controllers\ReviewController;
 use App\Http\Controllers\StoreController;
-use App\Http\Controllers\ProductsController;
 use App\Http\Controllers\NewsController;
 use Illuminate\Support\Facades\Auth;
 
@@ -39,6 +39,7 @@ Route::get( '/product/{slug}',  [StoreController::class,  'product']);
 Route::middleware(['auth'])->prefix('admin')->group(function(){
    Route::get('/',  [AdminController::class,  'index']);
    Route::resource('/category', CategoryController::class); 
+   Route::resource('/product', ProductController::class); 
 });
 
 Route::group(['prefix' => 'laravel-filemanager', 'middleware' => ['web', 'auth']], function () {
