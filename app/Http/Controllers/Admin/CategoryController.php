@@ -49,6 +49,13 @@ class CategoryController extends Controller
         //     //сохраняем путь картинки
         //     $category->img = $fname->store('uploads');            
         // }
+        $validated = $request->validate([            
+                                            'name' => 'required|min:3|max:255',                                       
+                                            'slug' => 'required|unique:categories|min:3|max:30',
+                                            // 'description'   => 'required|min:3|max:500',
+                                            // 'img'   => 'required|image',
+                                        ]);
+
         Category::create( $request->all() );
         return redirect('/admin/category');
     }
@@ -72,7 +79,8 @@ class CategoryController extends Controller
      */
     public function edit($id)
     {
-        //
+        $category = Category::findOrFail($id);
+        return view('admin.category.edit', compact('category'));
     }
 
     /**
@@ -84,7 +92,17 @@ class CategoryController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $validated = $request->validate([            
+                                            'name' => 'required|min:3|max:255',                                       
+                                            'slug' => 'required|unique:categories,slug,'.$id.'|min:3|max:30',
+                                            // 'description'   => 'required|min:3|max:500',
+                                            // 'img'   => 'required|image',
+                                        ]);
+
+        $category = Category::findOrFail($id);
+
+        $category->update( $request->all() );
+        return redirect('/admin/category');
     }
 
     /**
@@ -95,6 +113,7 @@ class CategoryController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Category::findOrFail($id)->delete();
+        return redirect('/admin/category');
     }
 }

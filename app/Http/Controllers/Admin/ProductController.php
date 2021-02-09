@@ -48,7 +48,16 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
-        Product::create( $request->all() );
+        $validated = $request->validate([            
+                                            'name'  => 'required|min:3|max:255',
+                                            'price' => 'required|numeric|min:1',
+                                            'slug'  => 'required|unique:products|min:3|max:30',
+                                            // 'action_price' => 'required|numeric|min:1',                                            
+                                            // 'description'   => 'required|min:3|max:500',
+                                            // 'img'   => 'required|image',
+                                        ]);
+
+        Product::create( $request->all() );  
         return redirect('/admin/product');
     }
 
@@ -71,7 +80,10 @@ class ProductController extends Controller
      */
     public function edit($id)
     {
-        //
+        $product = Product::findOrFail($id);
+        $categories = Category::all()->pluck('name', 'id');
+
+        return view('admin.product.edit', compact('product', 'categories'));
     }
 
     /**
@@ -83,7 +95,18 @@ class ProductController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $validated = $request->validate([            
+                                           'name'  => 'required|min:3|max:255',
+                                           'price' => 'required|numeric|min:1',
+                                           'slug'  => 'required|unique:products,slug,'.$id.'|min:3|max:30',
+                                           // 'action_price' => 'required|numeric|min:1',                                            
+                                           // 'description'   => 'required|min:3|max:500',
+                                           // 'img'   => 'required|image',
+                                        ]);
+
+        $product = Product::findOrFail($id);
+        $product->update( $request->all() ); 
+        return redirect('/admin/product');
     }
 
     /**
@@ -94,6 +117,7 @@ class ProductController extends Controller
      */
     public function destroy($id)
     {
-        //
-    }
+        Product::findOrFail($id)->delete();
+        return redirect('/admin/product');
+    }    
 }

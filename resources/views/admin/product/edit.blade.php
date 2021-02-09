@@ -1,7 +1,7 @@
 @extends('admin.layouts.index')
 
 @section('content')
-   <h1>Добавить товар</h1>
+   <h1>Редактировать товар</h1>
 
    {{-- @include('messages.errors')
 
@@ -11,7 +11,11 @@
        </div>        
    @endif --}}
 
-   {!! Form::open(['url' => '/admin/product', 'files' => true]) !!}
+   {!! Form::model($product,[                     
+                              'url' => '/admin/category/'.$product->id, 
+                              'files' => true, 
+                              'method' => 'put'
+                              ]) !!}
       
       @include('admin.product._form')
 

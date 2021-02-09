@@ -28,8 +28,10 @@
                <td>{{$item->price}}</td>
                <td>{!! $item->recommended !!}</td>
                <td>
-                  <a href=""><i class="far fa-edit"></i></a>
-                  <a href=""><i class="fas fa-trash-alt"></i></a>
+                  <a href="/admin/product/{{ $item->id }}/edit" class="btn btn-warning text-white">Изменить</a>
+                  {!! Form::open(['url' => '/admin/product/'.$item->id, 'method' => 'DELETE', 'class' => 'd-inline-block']) !!}
+                     <button class="btn btn-danger text-white">Удалить</button>
+                  {!! Form::close() !!}    
                </td>
 
             </tr>
