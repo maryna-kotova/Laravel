@@ -3,6 +3,7 @@
 use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\ProductController;
+use App\Http\Controllers\CartController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MainController;
 use App\Http\Controllers\ReviewController;
@@ -33,16 +34,18 @@ Route::get( '/sale',            [StoreController::class,  'sale']);
 Route::get( '/reviews',         [ReviewController::class, 'reviews'])->name('review');
 Route::post('/reviews',         [ReviewController::class, 'saveReview']);
 Route::get( '/news',            [NewsController::class,   'news']);
-Route::get( '/category/{slug}', [StoreController::class,  'category']);
-Route::get( '/product/{slug}',  [StoreController::class,  'product']);
+
+Route::get( '/category/{slug}',         [StoreController::class,  'category']);
+Route::get( '/product/{product:slug}',  [StoreController::class,  'product']);
+
+Route::post( '/cart/add',  [CartController::class,  'add']);
 
 
 Route::middleware(['auth', 'role:admin'])->prefix('admin')->group(function(){
    Route::get('/',  [AdminController::class,  'index']);  
 
    Route::resource('/category', CategoryController::class); 
-
-   Route::resource('/product', ProductController::class); 
+   Route::resource('/product',  ProductController::class); 
    
 });
 

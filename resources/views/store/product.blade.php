@@ -11,6 +11,16 @@
    {{-- Короткое описание продукта --}}
    <p>{{$product->description}}</p>
 
+   <form action="" class="form-add-to-cart" > 
+       <div class="form-group" style="display:inline-block; width: 5rem;">
+        <input type="number" name="qty" value="1" class="form-control" >
+       </div>
+       <input type="hidden" name="product_id" value="{{ $product->id }}">
+       <button class="btn btn-primary"><i class="fas fa-shopping-cart"> Add to cart</i></button>
+   </form>
+   {{-- <a href="">
+       <i class="fas fa-shopping-cart">Add to cart</i>
+   </a> --}}
     <hr>
     <h4>Оставьте свой отзыв</h4>
 
