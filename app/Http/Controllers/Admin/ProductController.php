@@ -95,6 +95,7 @@ class ProductController extends Controller
      */
     public function update(Request $request, $id)
     {
+        
         $validated = $request->validate([            
                                            'name'  => 'required|min:3|max:255',
                                            'price' => 'required|numeric|min:1',

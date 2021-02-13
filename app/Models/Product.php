@@ -52,4 +52,9 @@ class Product extends Model
     {
         $query->orderByDesc('created_at');
     }
+
+    public function setRecommendedAttribute($value)
+    {
+        $this->attributes['recommended'] = $value ? $value : 0;
+    }
 }

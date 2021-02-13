@@ -33,7 +33,7 @@
 </div>  
 
 <div class="form-group">
-   {!! Form::label('recommended', 'Recommended: ') !!}
+   {!! Form::label('recommended', 'Recommended: ') !!}  
    {!! Form::checkbox('recommended', '1') !!}
 </div>  
 

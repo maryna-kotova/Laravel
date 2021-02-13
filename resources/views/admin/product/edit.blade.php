@@ -12,7 +12,7 @@
    @endif --}}
 
    {!! Form::model($product,[                     
-                              'url' => '/admin/category/'.$product->id, 
+                              'url' => '/admin/product/'.$product->id, 
                               'files' => true, 
                               'method' => 'put'
                               ]) !!}
