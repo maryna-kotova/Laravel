@@ -51,6 +51,15 @@
 
       <ul class="navbar-nav ml-auto">
         <!-- Authentication Links -->
+
+        @role('admin')
+          <li class="nav-item">
+            <a class="nav-link" href="/admin">Admin panel</a>
+          </li>
+        @endrole
+
+        {{-- {{ dump(Gate::allows('manage-categories')) }} --}}
+
         @guest
             @if (Route::has('login'))
                 <li class="nav-item">
