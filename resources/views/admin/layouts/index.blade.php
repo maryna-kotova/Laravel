@@ -191,6 +191,9 @@
             <li class="list-item">
               <a href="/admin/product"><i class="fas fa-folder"></i> Товары</a>
             </li>
+            <li class="list-item">
+              <a href="/admin/slider"><i class="fas fa-folder"></i> Слайдер</a>
+            </li>
         </ul>
       </nav>
       <!-- /.sidebar-menu -->
@@ -211,11 +214,7 @@
   </div>
   <!-- /.content-wrapper -->
   <footer class="main-footer">
-    <strong>Copyright &copy; 2014-2020 <a href="https://adminlte.io">AdminLTE.io</a>.</strong>
-    All rights reserved.
-    <div class="float-right d-none d-sm-inline-block">
-      <b>Version</b> 3.1.0-rc
-    </div>
+    <strong>Maryna Kotova &copy; 2021</strong>    
   </footer>
 
   <!-- Control Sidebar -->
