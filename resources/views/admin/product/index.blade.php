@@ -2,9 +2,9 @@
 
 @section('content')
    <h1>Товары</h1>
-   <a href="/admin/product/create" class="btn btn-primary">Добавить товар</a>
+   {{-- <a href="/admin/product/create" class="btn btn-primary">Добавить товар</a> --}}
    <a href="{{ asset('admin/product/create') }}" class="btn btn-primary">Добавить товар</a>
-   <a href="{{ route('product.create') }}" class="btn btn-primary">Добавить товар</a>
+   {{-- <a href="{{ route('product.create') }}" class="btn btn-primary">Добавить товар</a> --}}
 
    <table class="table" id="dataTable">
       <thead>

@@ -1,7 +1,8 @@
 @extends('admin.layouts.index')
 
 @section('content')
-   <h1>Слайдер</h1>   
+   <h1>Слайдер</h1> 
+   <a href="{{ asset('admin/slider/create') }}" class="btn btn-primary">Добавить слайд</a>  
 
    <table class="table" id="dataTable">
       <thead>
@@ -22,7 +23,7 @@
                <td>{{$loop->iteration}}</td>
                <td><img style="width: 50px;" src="{{asset($item->img)}}" alt="img"></td>
                <td>{{$item->name}}</td>
-               <td>{{$item->description}}</td>
+               <td>{{ strip_tags($item->description) }}</td>
                <td>{{$item->button_text}}</td>
                <td>{{$item->button_url }}</td>               
                <td>{{$item->alt}}</td>              

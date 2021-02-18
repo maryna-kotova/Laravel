@@ -84,6 +84,10 @@ class SliderController extends Controller
                                             'name'  => 'required|min:3|max:255',                                       
                                         ]);
 
+      
+        
+
+        
         $slider = Slider::findOrFail($id);
         $slider->update( $request->all() ); 
         return redirect('/admin/slider');

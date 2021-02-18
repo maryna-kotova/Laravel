@@ -10009,6 +10009,68 @@ body {
   color: #666;
 }
 
+.card-btn-empty,
+.card-btn-full,
+.btn-full,
+.btn-empty {
+  padding: 7px 15px;
+  line-height: 17px;
+  font-size: 13px;
+  border-radius: 7px;
+  text-transform: uppercase;
+  border: 1px solid rgba(255, 92, 1, 0.75);
+}
+
+.card-btn-empty {
+  display: block;
+  margin: 0 auto;
+  text-decoration: none;
+  color: rgba(255, 92, 1, 0.75);
+}
+
+.card-btn-empty:hover {
+  text-decoration: none;
+  background-color: rgba(255, 92, 1, 0.75);
+  color: #fff;
+}
+
+.card-btn-full {
+  display: block;
+  margin: 0 auto;
+  text-decoration: none;
+  background-color: rgba(255, 92, 1, 0.75);
+  color: #fff;
+}
+
+.card-btn-full:hover {
+  text-decoration: none;
+  background-color: transparent;
+  color: rgba(255, 92, 1, 0.75);
+}
+
+.slider__title {
+  text-align: start;
+  font-size: 3rem;
+  line-height: 3rem;
+}
 .slider__text {
-  color: black !important;
+  width: 70%;
+  text-align: start;
+  font-size: 1.5rem;
+  line-height: 2rem;
+}
+.slider__text p {
+  text-align: start;
+}
+.slider__button {
+  margin: 5% 0;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+.slider__link {
+  color: white;
+}
+.slider__link:hover {
+  text-decoration: none;
+  text-shadow: 1px 1px 1px #fff;
+  color: white;
 }

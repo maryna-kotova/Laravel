@@ -311,7 +311,7 @@ eval("\n\nvar bind = __webpack_require__(/*! ./helpers/bind */ \"./node_modules/
   \*****************************/
 /***/ ((__unused_webpack_module, __unused_webpack_exports, __webpack_require__) => {
 
-eval("__webpack_require__(/*! ./bootstrap */ \"./resources/js/bootstrap.js\");\n\n__webpack_require__(/*! ./cart */ \"./resources/js/cart.js\");//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8vLi9yZXNvdXJjZXMvanMvYXBwLmpzPzZkNDAiXSwibmFtZXMiOlsicmVxdWlyZSJdLCJtYXBwaW5ncyI6IkFBQUFBLG1CQUFPLENBQUMsZ0RBQUQsQ0FBUDs7QUFDQUEsbUJBQU8sQ0FBQyxzQ0FBRCxDQUFQIiwiZmlsZSI6Ii4vcmVzb3VyY2VzL2pzL2FwcC5qcy5qcyIsInNvdXJjZXNDb250ZW50IjpbInJlcXVpcmUoJy4vYm9vdHN0cmFwJyk7XG5yZXF1aXJlKCcuL2NhcnQnKTsiXSwic291cmNlUm9vdCI6IiJ9\n//# sourceURL=webpack-internal:///./resources/js/app.js\n");
+eval("__webpack_require__(/*! ./bootstrap */ \"./resources/js/bootstrap.js\");\n\n__webpack_require__(/*! ./cart */ \"./resources/js/cart.js\");\n\n__webpack_require__(/*! ./slider */ \"./resources/js/slider.js\");//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8vLi9yZXNvdXJjZXMvanMvYXBwLmpzPzZkNDAiXSwibmFtZXMiOlsicmVxdWlyZSJdLCJtYXBwaW5ncyI6IkFBQUFBLG1CQUFPLENBQUMsZ0RBQUQsQ0FBUDs7QUFDQUEsbUJBQU8sQ0FBQyxzQ0FBRCxDQUFQOztBQUNBQSxtQkFBTyxDQUFDLDBDQUFELENBQVAiLCJmaWxlIjoiLi9yZXNvdXJjZXMvanMvYXBwLmpzLmpzIiwic291cmNlc0NvbnRlbnQiOlsicmVxdWlyZSgnLi9ib290c3RyYXAnKTtcbnJlcXVpcmUoJy4vY2FydCcpOyBcbnJlcXVpcmUoJy4vc2xpZGVyJyk7ICJdLCJzb3VyY2VSb290IjoiIn0=\n//# sourceURL=webpack-internal:///./resources/js/app.js\n");
 
 /***/ }),
 
@@ -332,6 +332,16 @@ eval("window._ = __webpack_require__(/*! lodash */ \"./node_modules/lodash/lodas
 /***/ ((__unused_webpack_module, __unused_webpack_exports, __webpack_require__) => {
 
 eval("var _require = __webpack_require__(/*! axios */ \"./node_modules/axios/index.js\"),\n    axios = _require[\"default\"];\n\nvar formAddToCart = document.querySelector('.form-add-to-cart');\n\nif (formAddToCart) {\n  formAddToCart.addEventListener('submit', function (e) {\n    e.preventDefault();\n    var data = new FormData(formAddToCart);\n    axios.post('/cart/add', data);\n  });\n}//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8vLi9yZXNvdXJjZXMvanMvY2FydC5qcz8zYTQ2Il0sIm5hbWVzIjpbInJlcXVpcmUiLCJheGlvcyIsImZvcm1BZGRUb0NhcnQiLCJkb2N1bWVudCIsInF1ZXJ5U2VsZWN0b3IiLCJhZGRFdmVudExpc3RlbmVyIiwiZSIsInByZXZlbnREZWZhdWx0IiwiZGF0YSIsIkZvcm1EYXRhIiwicG9zdCJdLCJtYXBwaW5ncyI6ImVBQTJCQSxtQkFBTyxDQUFDLDRDQUFELEM7SUFBakJDLEs7O0FBRWpCLElBQU1DLGFBQWEsR0FBR0MsUUFBUSxDQUFDQyxhQUFULENBQXVCLG1CQUF2QixDQUF0Qjs7QUFFQSxJQUFHRixhQUFILEVBQWlCO0FBQ2RBLGVBQWEsQ0FBQ0csZ0JBQWQsQ0FBK0IsUUFBL0IsRUFBeUMsVUFBQ0MsQ0FBRCxFQUFLO0FBQzNDQSxLQUFDLENBQUNDLGNBQUY7QUFDQSxRQUFNQyxJQUFJLEdBQUcsSUFBSUMsUUFBSixDQUFhUCxhQUFiLENBQWI7QUFFQUQsU0FBSyxDQUFDUyxJQUFOLENBQVcsV0FBWCxFQUF3QkYsSUFBeEI7QUFDRixHQUxEO0FBTUYiLCJmaWxlIjoiLi9yZXNvdXJjZXMvanMvY2FydC5qcy5qcyIsInNvdXJjZXNDb250ZW50IjpbImNvbnN0IHsgZGVmYXVsdDogYXhpb3MgfSA9IHJlcXVpcmUoXCJheGlvc1wiKTtcclxuXHJcbmNvbnN0IGZvcm1BZGRUb0NhcnQgPSBkb2N1bWVudC5xdWVyeVNlbGVjdG9yKCcuZm9ybS1hZGQtdG8tY2FydCcpO1xyXG5cclxuaWYoZm9ybUFkZFRvQ2FydCl7XHJcbiAgIGZvcm1BZGRUb0NhcnQuYWRkRXZlbnRMaXN0ZW5lcignc3VibWl0JywgKGUpPT57XHJcbiAgICAgIGUucHJldmVudERlZmF1bHQoKTtcclxuICAgICAgY29uc3QgZGF0YSA9IG5ldyBGb3JtRGF0YShmb3JtQWRkVG9DYXJ0KTtcclxuICAgICAgXHJcbiAgICAgIGF4aW9zLnBvc3QoJy9jYXJ0L2FkZCcsIGRhdGEpO1xyXG4gICB9KTtcclxufSJdLCJzb3VyY2VSb290IjoiIn0=\n//# sourceURL=webpack-internal:///./resources/js/cart.js\n");
+
+/***/ }),
+
+/***/ "./resources/js/slider.js":
+/*!********************************!*\
+  !*** ./resources/js/slider.js ***!
+  \********************************/
+/***/ (() => {
+
+eval("var carouselItem = document.querySelector('.carousel-item');\ncarouselItem.classList.add(\"active\");//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8vLi9yZXNvdXJjZXMvanMvc2xpZGVyLmpzP2Q1YTQiXSwibmFtZXMiOlsiY2Fyb3VzZWxJdGVtIiwiZG9jdW1lbnQiLCJxdWVyeVNlbGVjdG9yIiwiY2xhc3NMaXN0IiwiYWRkIl0sIm1hcHBpbmdzIjoiQUFBQSxJQUFJQSxZQUFZLEdBQUdDLFFBQVEsQ0FBQ0MsYUFBVCxDQUF1QixnQkFBdkIsQ0FBbkI7QUFFQUYsWUFBWSxDQUFDRyxTQUFiLENBQXVCQyxHQUF2QixDQUEyQixRQUEzQiIsInNvdXJjZXNDb250ZW50IjpbImxldCBjYXJvdXNlbEl0ZW0gPSBkb2N1bWVudC5xdWVyeVNlbGVjdG9yKCcuY2Fyb3VzZWwtaXRlbScpO1xyXG5cclxuY2Fyb3VzZWxJdGVtLmNsYXNzTGlzdC5hZGQoXCJhY3RpdmVcIik7XHJcbiJdLCJmaWxlIjoiLi9yZXNvdXJjZXMvanMvc2xpZGVyLmpzLmpzIiwic291cmNlUm9vdCI6IiJ9\n//# sourceURL=webpack-internal:///./resources/js/slider.js\n");
 
 /***/ }),
 
