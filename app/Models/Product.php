@@ -57,4 +57,5 @@ class Product extends Model
     {
         $this->attributes['recommended'] = $value ? $value : 0;
     }
+
 }
