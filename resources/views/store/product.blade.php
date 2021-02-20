@@ -78,9 +78,9 @@
     @endforelse   
 
     
-        {{-- @foreach ($recommended as $product)  
+        @foreach ($recommended as $product)  
             @include('store.parts._product')  
-        @endforeach --}}
+        @endforeach
    
 
 @endsection
