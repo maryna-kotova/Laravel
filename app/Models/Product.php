@@ -57,5 +57,9 @@ class Product extends Model
     {
         $this->attributes['recommended'] = $value ? $value : 0;
     }
+    public function productRecommended()
+    {
+       return $this->belongsToMany(Self::class, 'products_recommendeds', 'product_id', 'recommended_id');
+    }
 
 }

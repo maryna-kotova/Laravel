@@ -18,7 +18,7 @@ class CreateProductsRecommendedsTable extends Migration
             $table->unsignedBigInteger('recommended_id');
 
             $table->foreign('product_id')->references('id')->on('products')->onDelete('cascade');
-            $table->foreign('recommended_id')->references('id')->on('recommendeds')->onDelete('cascade');
+            $table->foreign('recommended_id')->references('id')->on('products')->onDelete('cascade');
         });
     }
 

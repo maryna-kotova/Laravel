@@ -5,6 +5,7 @@ use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\Admin\SliderController;
 use App\Http\Controllers\CartController;
+use App\Http\Controllers\CheckoutController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MainController;
 use App\Http\Controllers\ReviewController;
@@ -35,11 +36,16 @@ Route::get( '/sale',            [StoreController::class,  'sale']);
 Route::get( '/reviews',         [ReviewController::class, 'reviews'])->name('review');
 Route::post('/reviews',         [ReviewController::class, 'saveReview']);
 Route::get( '/news',            [NewsController::class,   'news']);
-Route::post('/cart/add',        [CartController::class,   'add']);
+
+Route::post('/cart/add',         [CartController::class,   'add']);
+Route::post('/cart/clear',       [CartController::class,   'clear']);
+Route::post('/cart/remove/{id}', [CartController::class,   'remove']);
+Route::post('/cart/change-qty',  [CartController::class,   'change']);
 
 Route::get( '/category/{slug}',         [StoreController::class,  'category']);
 Route::get( '/product/{product:slug}',  [StoreController::class,  'product']);
 
+Route::get( '/checkout',  [CheckoutController::class,  'checkout']);
 
 
 
@@ -58,3 +64,4 @@ Route::group(['prefix' => 'laravel-filemanager', 'middleware' => ['web', 'auth']
 
 Auth::routes();
 
+ 
