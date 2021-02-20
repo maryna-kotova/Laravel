@@ -46,7 +46,7 @@ Route::get( '/category/{slug}',         [StoreController::class,  'category']);
 Route::get( '/product/{product:slug}',  [StoreController::class,  'product']);
 
 Route::get( '/checkout',  [CheckoutController::class,  'checkout']);
-
+Route::post('/checkout',  [CheckoutController::class,  'checkoutSave']);
 
 
 Route::middleware(['auth', 'role:admin'])->prefix('admin')->group(function(){

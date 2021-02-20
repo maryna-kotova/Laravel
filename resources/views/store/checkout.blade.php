@@ -6,7 +6,7 @@
       @include('store.parts._cart')
    </div>
    
-   {!! Form::open('url'=>'/checkout-complete') !!}
+   {!! Form::open(['url'=>'/checkout']) !!}
    <div class="form-group">
       {!! Form::label('name') !!}
       {!! Form::text('name', null, ['class'=>'form-control']) !!}

@@ -10,5 +10,10 @@ class CheckoutController extends Controller
     {
         return view('store.checkout');        
     }
+
+    public function checkoutSave(Request $request)
+    {
+        // return view('store.checkout');        
+    }
     
 }
