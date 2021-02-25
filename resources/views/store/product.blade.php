@@ -7,9 +7,9 @@
       <p class="title">{{$product->name}}</p>
    </div>
   {{-- Картинка продукта --}}
-   <img src="{{$product->img}}" alt="{{$product->name}}">
+   <img src="{{$product->img}}" alt="{{$product->name}}" class="img-product">
    {{-- Короткое описание продукта --}}
-   <p>{{$product->description}}</p>
+   <p>{{ strip_tags($product->description) }}</p>
 
    <form id="formaCart" action="" class="form-add-to-cart" > 
        <div class="form-group" style="display:inline-block; width: 5rem;">
@@ -75,14 +75,17 @@
       </div>
       @empty
          <p>Добавьте отзыв к товару</p>
-    @endforelse   
+    @endforelse 
 
-    
+    <div class="page-header">
+        <p class="title">Рекомендованные товары</p>
+     </div>
+
+    <div class="recomended-product">
         @foreach ($recommended as $product)  
             @include('store.parts._product')  
-        @endforeach
-   
-
+        @endforeach   
+    </div>
 @endsection
 
 @section('title', $product->name)

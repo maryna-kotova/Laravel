@@ -42,6 +42,11 @@
    {!! Form::textarea('description', null, ['class' => 'form-control']) !!}
 </div>
 
+<div class="form-group">
+   {!! Form::label('productRecommended[]', 'Recommended products: ') !!}
+   {!! Form::select('productRecommended[]', $allProducts, null, ['multiple' => true, 'class' => 'form-control recommended_products']) !!}
+</div>
+
 {{-- <div class="form-group">
    {!! Form::label('imgUpload', 'Product Image: ') !!}
    {!! Form::file('imgUpload', ['class' => 'form-control']) !!}

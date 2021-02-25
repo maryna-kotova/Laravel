@@ -17,19 +17,11 @@
         </li>
 
         <li class="nav-item">
-          <a class="nav-link text-white text-uppercase sale" href="/sale">% Акции</a>
+          <a class="nav-link text-white text-uppercase sale" href="/sale">%Акции</a>
         </li>
 
         <li class="nav-item">
           <a class="nav-link text-white text-uppercase" href="/news">Новости</a>
-        </li>
-
-        <li class="nav-item">
-          <a class="nav-link text-white text-uppercase" href="/category/dogs">Собаки</a>
-        </li>
-
-        <li class="nav-item">
-          <a class="nav-link text-white text-uppercase" href="/category/cats">Кошки</a>
         </li>
         
         <li class="nav-item">

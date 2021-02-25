@@ -37,5 +37,7 @@
       CKEDITOR.replace('description', options);
       
       $('#lfm').filemanager('image');
+
+      $('.recommended_products').select2();
    </script>    
 @endsection

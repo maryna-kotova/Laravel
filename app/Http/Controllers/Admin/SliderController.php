@@ -78,16 +78,11 @@ class SliderController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
-    {
-               
+    {               
         $validated = $request->validate([            
                                             'name'  => 'required|min:3|max:255',                                       
                                         ]);
 
-      
-        
-
-        
         $slider = Slider::findOrFail($id);
         $slider->update( $request->all() ); 
         return redirect('/admin/slider');

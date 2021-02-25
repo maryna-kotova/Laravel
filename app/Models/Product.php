@@ -3,13 +3,15 @@
 namespace App\Models;
 
 use App\Scopes\ProductScope;
+use App\Traits\NoImage;
+use App\Traits\Sluggable;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 
 class Product extends Model
 {
-    use HasFactory;
+    use HasFactory, Sluggable, NoImage;
 
     protected $fillable = [
                             'name', 
@@ -22,10 +24,7 @@ class Product extends Model
                             'img'
                           ];
 
-    public function getImgAttribute($value)
-    {
-        return $value ? $value : '/images/noimage.png'; 
-    }
+
 
     public function category()
     {

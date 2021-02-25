@@ -51,7 +51,7 @@ class CategoryController extends Controller
         // }
         $validated = $request->validate([            
                                             'name' => 'required|min:3|max:255',                                       
-                                            'slug' => 'required|unique:categories|min:3|max:30',
+                                            // 'slug' => 'required|unique:categories|min:3|max:30',
                                             // 'description'   => 'required|min:3|max:500',
                                             // 'img'   => 'required|image',
                                         ]);
@@ -92,11 +92,8 @@ class CategoryController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $validated = $request->validate([            
-                                            'name' => 'required|min:3|max:255',                                       
-                                            'slug' => 'required|unique:categories,slug,'.$id.'|min:3|max:30',
-                                            // 'description'   => 'required|min:3|max:500',
-                                            // 'img'   => 'required|image',
+        $validated = $request->validate([           
+                                        'name' => 'required|min:3|max:255',                                          
                                         ]);
 
         $category = Category::findOrFail($id);

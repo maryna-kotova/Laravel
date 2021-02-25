@@ -4,7 +4,7 @@
      
     @foreach ($slider as $item)    
         <div class="carousel-item"  data-interval="2000">
-          <img src="{{ $item->img }}" class="d-block w-100" alt="{{ $item->alt }}">
+          <img src="{{ $item->img }}" class="d-block w-100" alt="image">
           <div class="carousel-caption d-none d-md-block slider__content">
             <h2 class="slider__title">{{ $item->name }}</h2>
             <div class="slider__text">{{ strip_tags($item->description) }}</div>

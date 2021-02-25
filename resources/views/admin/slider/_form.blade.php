@@ -22,11 +22,6 @@
 
 </div>  
 
-<div class="form-group">
-   {!! Form::label('alt', 'Alt: ') !!}
-   {!! Form::text('alt', null, ['class' => 'form-control']) !!}
-</div>
-
 <div class="input-group">
    <span class="input-group-btn">
      <a id="lfm" data-input="thumbnail" data-preview="holder" class="btn btn-primary">
