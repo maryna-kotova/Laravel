@@ -56,10 +56,7 @@ Route::middleware(['auth', 'role:admin'])->prefix('admin')->group(function(){
    Route::resource('/category', CategoryController::class); 
    Route::resource('/product',  ProductController::class); 
    Route::resource('/slider',   SliderController::class);
-<<<<<<< HEAD
    Route::resource('/order',    OrderController::class);
-=======
->>>>>>> 35d55bb4a495c78017befa2feeed9cde191589cc
    
 });
 

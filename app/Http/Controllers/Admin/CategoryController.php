@@ -37,23 +37,9 @@ class CategoryController extends Controller
      */
     public function store(Request $request)
     {
-        // $category = new Category();
-        // $category->name        = $request->name;
-        // $category->slug        = $request->slug;
-        // $category->description = $request->description;
-        // $category->img         = $request->img;
-        // $category->save();
-
-        // $fname = $request->file('imgUpload');
-        // if($fname != null){
-        //     //сохраняем путь картинки
-        //     $category->img = $fname->store('uploads');            
-        // }
         $validated = $request->validate([            
-                                            'name' => 'required|min:3|max:255',                                       
-                                            // 'slug' => 'required|unique:categories|min:3|max:30',
-                                            // 'description'   => 'required|min:3|max:500',
-                                            // 'img'   => 'required|image',
+                                            'name' => 'required|min:3|max:255',                               
+                                            
                                         ]);
 
         Category::create( $request->all() );
