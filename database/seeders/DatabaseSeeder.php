@@ -16,6 +16,7 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
 
+<<<<<<< HEAD
         // DB::table('users')->insert([
         //     'name' => 'Demo',
         //     'email' => 'demo@gmail.com',
@@ -43,5 +44,28 @@ class DatabaseSeeder extends Seeder
         // \App\Models\Product::factory(2)->create();
         // \App\Models\Review::factory(5)->create();
         // \App\Models\News::factory(22)->create();
+=======
+        DB::table('users')->insert([
+            'name' => 'Demo',
+            'email' => 'demo@gmail.com',
+            'password' => Hash::make('demo'),
+        ]);
+
+        DB::table('roles')->insert([
+            'name' => 'admin',
+            'slug' => 'admin',            
+        ]);
+
+        DB::table('users_roles')->insert([
+            'user_id' => '1',
+            'role_id' => '1',            
+        ]);
+
+        \App\Models\User::factory(10)->create();
+        \App\Models\Category::factory(10)->create();
+        \App\Models\Product::factory(2)->create();
+        \App\Models\Review::factory(5)->create();
+        \App\Models\News::factory(22)->create();
+>>>>>>> 35d55bb4a495c78017befa2feeed9cde191589cc
     }
 }

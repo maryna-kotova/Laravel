@@ -21,6 +21,10 @@
                <td><button class="btn btn-danger remove-item" data-id="{{$product['id']}}">X</button></td>
             </tr>
          @endforeach
+<<<<<<< HEAD
+=======
+
+>>>>>>> 35d55bb4a495c78017befa2feeed9cde191589cc
       </tbody>
       <tfoot>
          <tr>
@@ -31,4 +35,8 @@
    </table>
 @else
    <p>Cart is empty</p>
+<<<<<<< HEAD
+=======
+
+>>>>>>> 35d55bb4a495c78017befa2feeed9cde191589cc
 @endif

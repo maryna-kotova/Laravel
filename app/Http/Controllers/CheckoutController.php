@@ -2,16 +2,21 @@
 
 namespace App\Http\Controllers;
 
+<<<<<<< HEAD
 use App\Facades\Cart;
 use App\Models\Order;
 use App\Models\OrderItem;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
+=======
+use Illuminate\Http\Request;
+>>>>>>> 35d55bb4a495c78017befa2feeed9cde191589cc
 
 class CheckoutController extends Controller
 {
     public function checkout()
     {
+<<<<<<< HEAD
         return view('store.checkout');
     }
 
@@ -50,6 +55,14 @@ class CheckoutController extends Controller
 
 
         return back()->with('success', 'Спасибо за заказ');
+=======
+        return view('store.checkout');        
+    }
+
+    public function checkoutSave(Request $request)
+    {
+        // return view('store.checkout');        
+>>>>>>> 35d55bb4a495c78017befa2feeed9cde191589cc
     }
     
 }
