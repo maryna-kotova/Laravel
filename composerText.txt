@@ -9,6 +9,8 @@ php artisan migrate
 # php artisan migrate:rollback - откат назад
 # php artisan migrate:refresh - перезагрузка
 
+php artisan make:migration create_flights_table
+
 php artisan make:model Review -m  //создает модель и миграцию для нее
 
  composer require laravel/ui //устанавливаем пакеты

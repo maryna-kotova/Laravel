@@ -196,6 +196,9 @@
             <li class="list-item">
               <a href="/admin/slider"><i class="fas fa-folder"></i> Слайдер</a>
             </li>
+            <li class="list-item">
+              <a href="/admin/order"><i class="fas fa-folder"></i> Заказы</a>
+            </li>
         </ul>
       </nav>
       <!-- /.sidebar-menu -->

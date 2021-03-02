@@ -1,10 +1,24 @@
 @extends('layouts.main')
 
 @section('content')
-   <h1>Checkout</h1>
+
+   <div class="page-header">
+      <p class="title">Checkout</p>
+   </div>
+   
    <div class="modal-body">
       @include('store.parts._cart')
    </div>
+
+   @if ($errors->any())
+      <div class="alert alert-danger">
+         <ul>
+            @foreach ($errors->all() as $error)
+               <li>{{ $error }}</li>
+            @endforeach
+         </ul>
+      </div>       
+   @endif
    
    {!! Form::open(['url'=>'/checkout']) !!}
    <div class="form-group">

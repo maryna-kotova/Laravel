@@ -3,6 +3,9 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\Order;
+use App\Models\OrderItem;
+use App\Models\Status;
 use Illuminate\Http\Request;
 
 class OrderController extends Controller
@@ -14,7 +17,8 @@ class OrderController extends Controller
      */
     public function index()
     {
-        //
+        $orders = Order::with('status')->get();
+        return view('admin.order.index', compact('orders'));
     }
 
     /**
@@ -46,7 +50,9 @@ class OrderController extends Controller
      */
     public function show($id)
     {
-        //
+        $totalSum = Order::where('id', $id)->select('totalSum')->get();
+        $orderItems = OrderItem::where('order_id', $id)->get();
+        return view('admin.order.show', compact('orderItems','totalSum'));
     }
 
     /**
@@ -57,7 +63,9 @@ class OrderController extends Controller
      */
     public function edit($id)
     {
-        //
+        $order = Order::findOrFail($id);
+        $statuses = Status::all()->pluck('name','id');
+        return view('admin.order.edit', compact('order', 'statuses'));
     }
 
     /**
@@ -69,7 +77,17 @@ class OrderController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $validated = $request->validate([
+                                            'name'    => 'required|max:200',
+                                            'phone'   => 'required|max:13',
+                                            'address' => 'required',
+                                        ]);
+
+        $order = Order::findOrFail($id);
+      
+        $order->update( $request->all() );
+
+        return redirect('/admin/order')->with('success', 'Заказ обновлен');
     }
 
     /**
@@ -80,6 +98,7 @@ class OrderController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Order::findOrFail($id)->delete();
+        return redirect('/admin/order')->with('success', 'Заказ удален');
     }
 }
