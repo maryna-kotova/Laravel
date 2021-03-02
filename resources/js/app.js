@@ -1,2 +1,4 @@
 require('./bootstrap');
-require('./cart');
+require('./cart'); 
+require('./slider'); 
+require('./product'); 

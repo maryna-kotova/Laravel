@@ -1,7 +1,7 @@
 @extends('admin.layouts.index')
 
 @section('content')
-   <h1>Добавить товар</h1>
+   <h1>Редактировать слайд</h1>
 
    {{-- @include('messages.errors')
 
@@ -11,9 +11,13 @@
        </div>        
    @endif --}}
 
-   {!! Form::open(['url' => '/admin/product', 'files' => true]) !!}
+   {!! Form::model($slider,[                     
+                              'url' => '/admin/slider/'.$slider->id, 
+                              'files' => true, 
+                              'method' => 'put'
+                              ]) !!}
       
-      @include('admin.product._form')
+      @include('admin.slider._form')
 
    {!! Form::close() !!}
 
@@ -33,7 +37,5 @@
       CKEDITOR.replace('description', options);
       
       $('#lfm').filemanager('image');
-
-      $('.recommended_products').select2();
    </script>    
 @endsection

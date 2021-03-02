@@ -17,19 +17,11 @@
         </li>
 
         <li class="nav-item">
-          <a class="nav-link text-white text-uppercase sale" href="/sale">% Акции</a>
+          <a class="nav-link text-white text-uppercase sale" href="/sale">%Акции</a>
         </li>
 
         <li class="nav-item">
           <a class="nav-link text-white text-uppercase" href="/news">Новости</a>
-        </li>
-
-        <li class="nav-item">
-          <a class="nav-link text-white text-uppercase" href="/category/dogs">Собаки</a>
-        </li>
-
-        <li class="nav-item">
-          <a class="nav-link text-white text-uppercase" href="/category/cats">Кошки</a>
         </li>
         
         <li class="nav-item">
@@ -51,12 +43,19 @@
 
       <ul class="navbar-nav ml-auto">
         <!-- Authentication Links -->
+        <li class="nav-item">
+          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#cartModal">
+            Cart
+          </button>
+        </li>
 
         @role('admin')
           <li class="nav-item">
             <a class="nav-link" href="/admin">Admin panel</a>
           </li>
         @endrole
+
+
 
         {{-- {{ dump(Gate::allows('manage-categories')) }} --}}
 

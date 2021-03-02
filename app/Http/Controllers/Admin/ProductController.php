@@ -37,7 +37,8 @@ class ProductController extends Controller
     public function create()
     {
         $categories = Category::all()->pluck('name', 'id');
-        return view('admin.product.create', compact('categories'));
+        $allProducts = Product::all()->pluck('name', 'id');
+        return view('admin.product.create', compact('categories', 'allProducts'));
     }
 
     /**
@@ -50,14 +51,12 @@ class ProductController extends Controller
     {
         $validated = $request->validate([            
                                             'name'  => 'required|min:3|max:255',
-                                            'price' => 'required|numeric|min:1',
-                                            'slug'  => 'required|unique:products|min:3|max:30',
-                                            // 'action_price' => 'required|numeric|min:1',                                            
-                                            // 'description'   => 'required|min:3|max:500',
-                                            // 'img'   => 'required|image',
+                                            'price' => 'required|numeric|min:1',                                     
                                         ]);
 
-        Product::create( $request->all() );  
+        $product = Product::create( $request->all() );  
+        $product->productRecommended()->sync($request->productRecommended);
+
         return redirect('/admin/product');
     }
 
@@ -82,8 +81,9 @@ class ProductController extends Controller
     {
         $product = Product::findOrFail($id);
         $categories = Category::all()->pluck('name', 'id');
+        $allProducts = Product::all()->pluck('name', 'id');
 
-        return view('admin.product.edit', compact('product', 'categories'));
+        return view('admin.product.edit', compact('product', 'categories', 'allProducts'));
     }
 
     /**
@@ -97,16 +97,15 @@ class ProductController extends Controller
     {
         
         $validated = $request->validate([            
-                                           'name'  => 'required|min:3|max:255',
-                                           'price' => 'required|numeric|min:1',
-                                           'slug'  => 'required|unique:products,slug,'.$id.'|min:3|max:30',
-                                           // 'action_price' => 'required|numeric|min:1',                                            
-                                           // 'description'   => 'required|min:3|max:500',
-                                           // 'img'   => 'required|image',
+                                        'name'  => 'required|min:3|max:255',
+                                        'price' => 'required|numeric|min:1',
+                                        'slug'  => 'required|unique:products,slug,'.$id.'|min:3|max:30',                                           
                                         ]);
 
-        $product = Product::findOrFail($id);
-        $product->update( $request->all() ); 
+        $product = Product::findOrFail($id);        
+        $product -> update( $request->all() ); 
+        $product->productRecommended()->sync($request->productRecommended);
+
         return redirect('/admin/product');
     }
 

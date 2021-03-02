@@ -7,6 +7,7 @@ use App\Models\Category;
 use App\Models\Permission;
 use App\Models\Product;
 use App\Models\Role;
+use App\Models\Slider;
 use App\Models\User;
 
 class MainController extends Controller
@@ -15,7 +16,9 @@ class MainController extends Controller
     {
         $title = 'Всё для домашних животных';
         $products = Product::with('category')->recommended()->latest()->get();  
-        return view('main.index', compact('title', 'products'));
+        $slider = Slider::all();
+
+        return view('main.index', compact('title', 'products', 'slider'));
     }
     
     public function contacts()

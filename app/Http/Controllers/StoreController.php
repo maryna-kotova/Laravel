@@ -32,9 +32,11 @@ class StoreController extends Controller
 
     public function product(Product $product)
     {
+        $recommended = $product->productRecommended;
         // $product = Product::where('slug', $slug)->firstOrFail();
         $reviews= Review::where('product_id', $product->id)->get();  
+        // dd($recommended);
         
-        return view('store.product', compact('product', 'reviews'));
+        return view('store.product', compact('product', 'reviews', 'recommended'));
     }
 }

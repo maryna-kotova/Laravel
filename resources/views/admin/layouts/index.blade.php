@@ -27,6 +27,8 @@
   <link rel="stylesheet" href="/plugins/summernote/summernote-bs4.min.css">
   {{-- Css Data Tables --}}
   <link rel="stylesheet" href="//cdn.datatables.net/1.10.23/css/jquery.dataTables.min.css">
+  {{-- Select 2 --}}
+  <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
 </head>
 <body class="hold-transition sidebar-mini layout-fixed">
 <div class="wrapper">
@@ -191,6 +193,9 @@
             <li class="list-item">
               <a href="/admin/product"><i class="fas fa-folder"></i> Товары</a>
             </li>
+            <li class="list-item">
+              <a href="/admin/slider"><i class="fas fa-folder"></i> Слайдер</a>
+            </li>
         </ul>
       </nav>
       <!-- /.sidebar-menu -->
@@ -211,11 +216,7 @@
   </div>
   <!-- /.content-wrapper -->
   <footer class="main-footer">
-    <strong>Copyright &copy; 2014-2020 <a href="https://adminlte.io">AdminLTE.io</a>.</strong>
-    All rights reserved.
-    <div class="float-right d-none d-sm-inline-block">
-      <b>Version</b> 3.1.0-rc
-    </div>
+    <strong>Maryna Kotova &copy; 2021</strong>    
   </footer>
 
   <!-- Control Sidebar -->
@@ -262,6 +263,8 @@
 <script src="/dist/js/pages/dashboard.js"></script>
 {{-- Data Tables --}}
 <script src="/plugins/datatables/jquery.dataTables.min.js"></script>
+{{-- Select 2 --}}
+<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
 @yield('js')
 </body>
 </html>
